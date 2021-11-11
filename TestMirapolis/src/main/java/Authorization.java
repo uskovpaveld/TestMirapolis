@@ -25,6 +25,9 @@ public class Authorization
     public static Object[][] dbData()
     {
         return new Object[][]{
+                {"//","//"},
+                {"@@",""},
+                {"2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222","123"},
                 {"fominaelena", "1P73BP4Z"},
                 {"fominaelena", ""},
                 {"", "1P73BP4Z"},
@@ -49,12 +52,14 @@ public class Authorization
             alert.accept();
             driver.close();
             driver = new ChromeDriver();
+            driver.manage().window().maximize();
             Assert.fail(error);
         }
         catch (NoAlertPresentException ex)
         {
             driver.close();
             driver = new ChromeDriver();
+            driver.manage().window().maximize();
         }
     }
 
